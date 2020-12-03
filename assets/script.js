@@ -38,23 +38,31 @@ function generatePassword()
 {
   //Present user with prompt for password length
 
-   var passwordLength = Number(prompt("The password must be between 8 to 128 characters. How many characters would you like?"));
-   
-   // Checks if user entered a length between 8 and 128, re-prompts if user doesn't.
+   var passwordLength = "" ;
 
-   if (passwordLength < 8 || passwordLength > 128)
+   while (isNaN(passwordLength) || passwordLength === null|| passwordLength < 8 || passwordLength >128)
    {
-    alert ("Password length MUST be between 8 and 128 characters");
-    var passwordLength = (prompt("Try again. The password MUST be between 8 to 128 characters. How many characters would you like?"));
+     passwordLength = prompt("The password length must be a number between 8 to 128 characters. How many characters would you like?");
    }
-    
-   //Checks if user entered a number, re-prompts if user doesn't.
+   
+   
+   
+  // Checks if user entered a length between 8 and 128, re-prompts if user doesn't.
 
-   if(isNaN(passwordLength)) 
-    {
-      var passwordLength = (prompt("It is not a number. Please enter a number from 8 to 128", ""));
-    }
+  //  if (passwordLength < 8 || passwordLength > 128)
+  //  {
+  //   alert ("Password length MUST be between 8 and 128 characters");
+  //   var passwordLength = (prompt("Try again. The password MUST be between 8 to 128 characters. How many characters would you like?"));
+  //  }
+    
+  //  //Checks if user entered a number, re-prompts if user doesn't.
+
+  //  if(isNaN(passwordLength)) 
+  //   {
+  //     var passwordLength = (prompt("It is not a number. Please enter a number from 8 to 128", ""));
+  //   }
   
+
   //Parameters to Include - The user decides the criteria to include
    var useLowerCase = confirm("Click OK to include lowercase letters");
    var useUpperCase = confirm("Click OK to include uppercase letters");
@@ -64,7 +72,12 @@ function generatePassword()
   // Invalid input prompts the user for input again: User must select at least 1 out of the 4
   while (useLowerCase == false && useUpperCase == false && useNumbers == false && useSpecial == false)
   {
-  alert("Please select at least one of the 4 options to include");
+   alert("Please select at least one of the 4 options to include");
+   passwordLength = prompt("The password length must be a number between 8 to 128 characters. How many characters would you like?");
+   var useLowerCase = confirm("Click OK to include lowercase letters");
+   var useUpperCase = confirm("Click OK to include uppercase letters");
+   var useNumbers = confirm("Click OK to include numbers");
+   var useSpecial = confirm("Click OK to include special characters");
   }
 
 //Random functions are called for the criteria selected and this is stored in the passwordArray.
