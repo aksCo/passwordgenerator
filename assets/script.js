@@ -37,13 +37,22 @@ return SC[Math.floor(Math.random()* SC.length)];
 function generatePassword()
 {
   //Present user with prompt for password length
-   var passwordLength = (prompt("The password must be between 8 to 128 characters. How many characters would you like?"));
+  //If user enters anything other than the number, it will still take user
+  //through the steps but return "undefined" as password.
+   var passwordLength = Number(prompt("The password must be between 8 to 128 characters. How many characters would you like?"));
    
-   if (passwordLength < 8 || passwordLength > 128 || typeof(passwordLength) != 'number')
+   if (passwordLength < 8 || passwordLength > 128)
    {
-     alert ("Try again. Password length MUST be between 8 and 128 characters");
-     var passwordLength = (prompt("The password must be between 8 to 128 characters. How many characters would you like?"));
+    alert ("Try again. Password length MUST be between 8 and 128 characters");
+    var passwordLength = (prompt("Try again. The password MUST be between 8 to 128 characters. How many characters would you like?"));
    }
+  
+  //  commented out bcos this 
+  // if (passwordLength != Number)
+  //  {
+  //   alert ("Try again. Password length MUST be between 8 and 128 characters");
+  //   var passwordLength = (prompt("Try again. The password MUST be between 8 to 128 characters. How many characters would you like?"));
+  //  }
 
   //Parameters to Include - The user decides the criteria to include
    var useLowerCase = confirm("Click OK to include lowercase letters");
