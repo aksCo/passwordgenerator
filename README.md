@@ -4,8 +4,9 @@ Random Password Generator
 ## Description 
 The HTML file (linked to the js and css files in the asset folder) launches a random password generator.
 
-## Link to Deployed Code
+## Link to Deployed Application
 
+https://aksco.github.io/passwordgenerator/
 
 ## Usage
 
