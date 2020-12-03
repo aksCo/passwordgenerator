@@ -39,7 +39,7 @@ function generatePassword()
   //Present user with prompt for password length
    var passwordLength = (prompt("The password must be between 8 to 128 characters. How many characters would you like?"));
    
-   if (passwordLength < 8 || passwordLength > 128 || passwordLength != Number)
+   if (passwordLength < 8 || passwordLength > 128 || typeof(passwordLength) != 'number')
    {
      alert ("Try again. Password length MUST be between 8 and 128 characters");
      var passwordLength = (prompt("The password must be between 8 to 128 characters. How many characters would you like?"));
