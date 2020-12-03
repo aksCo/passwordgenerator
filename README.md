@@ -1,5 +1,4 @@
-# Your Project Title
-Random Password Generator
+# Random Password Generator
 
 ## Description 
 The HTML file (linked to the js and css files in the asset folder) launches a random password generator.
